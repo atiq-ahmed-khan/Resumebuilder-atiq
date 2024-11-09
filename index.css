@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"], button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #45a049;
+}
+
+.resume-preview {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.resume-preview .preview-content {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.resume-preview h2 {
+    color: #333;
+}

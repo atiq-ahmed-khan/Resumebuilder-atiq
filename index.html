@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container" id="formContainer">
+        <h1>Resume Builder</h1>
+        <form id="resumeForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="summary">Professional Summary:</label>
+            <textarea id="summary" name="summary" rows="4" required></textarea>
+
+            <label for="experience">Work Experience:</label>
+            <textarea id="experience" name="experience" rows="4" required></textarea>
+
+            <label for="education">Education:</label>
+            <textarea id="education" name="education" rows="4" required></textarea>
+
+            <input type="submit" value="Generate Resume">
+        </form>
+    </div>
+    <div class="resume-preview" id="resumePreview">
+        <div class="preview-content">
+            <h2>Resume Preview</h2>
+            <p><strong>Name:</strong> <span id="previewName"></span></p>
+            <p><strong>Email:</strong> <span id="previewEmail"></span></p>
+            <p><strong>Professional Summary:</strong> <span id="previewSummary"></span></p>
+            <p><strong>Work Experience:</strong> <span id="previewExperience"></span></p>
+            <p><strong>Education:</strong> <span id="previewEducation"></span></p>
+            <button onclick="closeResumePreview()">Close</button>
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById('resumeForm');
+        const resumePreview = document.getElementById('resumePreview');
+        const formContainer = document.getElementById('formContainer');
+        const previewName = document.getElementById('previewName');
+        const previewEmail = document.getElementById('previewEmail');
+        const previewSummary = document.getElementById('previewSummary');
+        const previewExperience = document.getElementById('previewExperience');
+        const previewEducation = document.getElementById('previewEducation');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            previewName.textContent = form.name.value;
+            previewEmail.textContent = form.email.value;
+            previewSummary.textContent = form.summary.value;
+            previewExperience.textContent = form.experience.value;
+            previewEducation.textContent = form.education.value;
+            resumePreview.style.display = 'block';
+            formContainer.style.display = 'none';
+        });
+
+        function closeResumePreview() {
+            resumePreview.style.display = 'none';
+            formContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
